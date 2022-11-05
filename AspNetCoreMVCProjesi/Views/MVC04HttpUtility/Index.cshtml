@@ -1,0 +1,29 @@
+﻿@using System.Web
+
+@{
+    string baslik = "<h1>HttpUtility Kullanımı</h1>";
+    string baslikHtmlEncode = HttpUtility.HtmlEncode(baslik); // baslik değişkeni içerisindeki karakterleri kodla
+    string baslikHtmlDecode = HttpUtility.HtmlDecode(baslikHtmlEncode);
+}
+
+<h1>
+    Mvc Http Utility Kullanımı
+</h1>
+
+<p>
+    HttpUtility ile karakter kodlaması ve bu kodlamanın çözülmesi işlemleri yapılar.
+</p>
+
+<h3>
+    Başlık : @baslik
+</h3>
+
+<h3>
+    Başlığın HtmlEncode Hali : @baslikHtmlEncode
+</h3>
+
+<h3>
+    Başlığın HtmlDecode Hali : @baslikHtmlDecode
+</h3>
+
+@Html.Raw(baslikHtmlDecode)

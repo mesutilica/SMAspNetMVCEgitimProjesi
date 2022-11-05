@@ -1,0 +1,57 @@
+﻿@{
+    DateTime tarih = DateTime.Now;
+}
+
+<h1>
+    StringFormat Yöntemiyle Ekrandaki Verileri Formatlayabiliriz
+</h1>
+
+<h2>
+    Tarih Formatlama
+</h2>
+
+<h3>
+    @tarih
+</h3>
+
+@("Kısa Tarih 0:d : " + String.Format("{0:d}", tarih))
+
+<hr />
+
+@("Kısa Saat 0:d : " + String.Format("{0:t}", tarih))
+
+<hr />
+
+@("Yıl 0:yyyy : " + String.Format("{0:yyyy}", tarih))
+
+<hr />
+
+<h2>
+    Sayı Formatlama
+</h2>
+
+@("Fiyat : " + String.Format("{0:C}", 49.90))
+
+<hr />
+
+0:D3 : @String.Format("{0:D3}", 10)
+
+<hr />
+
+0:D5 : @String.Format("{0:D5}", 10)
+
+<hr />
+
+0:F1 : @String.Format("{0:F1}", 15.96)
+
+<hr />
+
+0:F2 : @String.Format("{0:F2}", 15.9) TL ₺ $ €
+
+<hr />
+
+
+0:F3 : @String.Format("{0:F3}", 15.95) ₺ > altgr + t
+
+<hr />
+
