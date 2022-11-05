@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Anasayfa";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Asp.Net Core Eğitim Projesi</h1>
+</div>
+
+<p>
+    Asp.Net Core da Css, Javascript kütüphaneleri ile Resim dosyalarımızı wwwroot isimli klasörün içerisine koymamız gerekiyorr!! Aksi halde projemiz bu dosyaları çalıştırmayacaktır!!!
+</p>
+
+<p>
+    Html, css ve js kodlarını view sayfalarında istediğimiz gibi kullanabiliriz.
+</p>
+
+<p>
+    Eğer projede hazır template kullanacaksak tema klasörünü wwwroot a atabiliriz bu şekilde içindeki kütüphaneleri kullanabiliriz.
+</p>
+
+<h3>_ViewStart dosyası</h3>
+<p>
+    Views klasörü altındaki _ViewStart dosyası içerisinde yer alan Layout = "_Layout"; kodu ile oluşturduğumuz view ların varsayılan olarak hangi şablonu kullanacağını belirler.
+</p>
+
+<h3>_ViewImports Doysası</h3>
+<p>
+    Bu dosya içerisinde projemizde kullanacağımız standart kütüphaneleri belirterek her seferinde sayfada using kullanarak kod yazmaktan kurtulmamız sağlanır.
+</p>
+
+<h3>Properties Klasörü ve launchSettings.json Dosyası</h3>
+
+<p>
+    Uygulama oluştuktan sonra uygulamamızın nasıl çalıştırılacağı ile ilgili temel ayarları tutan dosyadır.
+</p>
+
+<p>
+    Asp.net core ile birlikte IIS dışında varsayılan olarak kullanılan Kestrel server adında bir yapı getirildi.
+    Start a veya play ikonun tıkladığımızda tercih ettiğimiz server a göre launchSettings.json dosyasındaki ayarlara göre uygulamamız çalışır.
+</p>
+
+<h3>Menüyü Değiştirme veya Yeni Sayfayı Menüye Ekleme</h3>
+
+<p>
+    Üst menü(header) veya en alttaki footer da değişiklik yapmak için Views klasürü altındaki Shared klasörünü genişletip _Layout.cshtml dosyasını açarak bu alanlarda değişiklik yapabiliriz.
+</p>
+
+<p>
+    _Layout veya başka bir sayfada kullanılan asp-controller="", asp-action="" gibi attribute ler o element tetiklendiğinde(örneğin menüye tıklandığında) çalıştırılacak olan controller ve içindeki action ı ifade eder.
+    Mvc de bu attribute lara TagHelpers ismi verilir. Bu attribute leri kullandığımızda a elementinin href özelliğini ayrıca yazmamıza gerek kalmaz.
+</p>
+
+<h3>Mvc Uygulamasında Layout u Değiştirme</h3>
+
+<p>
+    Bu işlem için Views klasürü altındaki _ViewStart.cshtml dosyasını açıp buradaki Layout="" kısmındaki layout adını değiştirerek işlemi gerçekleştirebiliriz.
+</p>
+
+<h3>appsettings.json Dosyası</h3>
+
+<p>
+    Bu dosya uygulamamızın genel ayarlarının tutulduğu dosyadır. Veritabanı bağlantı bilgisi veya sitede kullanılacak mail bilgileri gibi verileri bu soyada saklayıp uygulamanın her yerinden bu verilere ulaşarak kullanabiliriz.
+</p>
+
+<h3>Program.cs Dosyası</h3>
+
+<p>
+    Bu class mvc uygulamamızla alakalı tüm yapılandırmaların belirlendiği dosyadır.
+</p>

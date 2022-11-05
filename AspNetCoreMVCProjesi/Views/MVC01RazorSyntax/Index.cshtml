@@ -1,0 +1,31 @@
+﻿
+@{
+    // Bu alan c# kod yazma alanıdır
+    string kisi = "Murat Yılmaz"; // değişken tanımlayabiliriz
+    string[] isimler = new string[] { "Mesut", "Murat", "Mücahit" }; // dizi tanımlayabiliriz.
+}
+
+<h1>Mvc Razor Syntax Kullanımı</h1>
+
+<p>
+    .cshtml uzantılı view sayfalarında@sembolü ile başlayarak c# kodu yazma işlemine razor syntax ı denilir.
+</p>
+
+<h3>Değişkeni Ekrana Yazdırma</h3>
+
+@kisi
+
+<b>
+   Kişi bilgisini html elementi içinde kullanabiliriz :  @kisi
+</b>
+
+<hr />
+
+<h3>
+    İsimleri foreach döngüsüyle ekrana yazdırma
+</h3>
+
+@foreach (var isim in isimler) // @foreach yazıp ... olanı seçersek
+{
+    <h5>@isim</h5>
+}

@@ -1,0 +1,177 @@
+﻿@{
+}
+
+<h1>Html Helpers</h1>
+
+<p>
+    Mvc de sayfada html elementleri oluşturabilmemizi sağlayan yardımcı metotlara html helpers denir.
+</p>
+
+@Html.ActionLink("Html Helpers ActionLink a elementi oluşturur", "Index")
+
+<hr />
+
+@Html.ActionLink("Farklı bir controllerdaki action ı çalıştırma", "Index", "Home")
+
+<hr />
+
+<h3>
+    Html Checkbox Oluşturma
+</h3>
+
+@Html.CheckBox("Onay") Onaylıyorum
+<input id="Onay" name="Onay" type="checkbox" value="true"> Onaylıyorum
+
+<hr />
+
+<h3>
+    Html Textbox Oluşturma
+</h3>
+
+@Html.TextBox("txtAd") Ekranda veri giriş
+
+<input id="txtAd" name="txtAd" type="text" value="" style="border:dashed" class="deneme">
+
+<hr />
+
+<h3>
+    Html Hidden(Gizli Element) Oluşturma
+</h3>
+
+@Html.Hidden("gizliElement", "Hidden elementiyle kullanıcının görmediği verileri arkaplanda saklayabiliriz")
+
+<hr />
+
+<h3>
+    Html Label Oluşturma
+</h3>
+
+@Html.Label("lblAd", "Html label elementi oluşturma")
+
+<hr />
+
+<h3>
+    Html Textarea Oluşturma
+</h3>
+
+@Html.TextArea("txtAd") Ekrandan çok satırlı veri giriş alanı oluşturma
+
+<hr />
+
+<h3>
+    Html Password Oluşturma
+</h3>
+
+@Html.Password("txtPassword")
+<br />
+<input id="txtPassword" name="txtPassword" type="password">
+
+<hr />
+
+<h3>
+    Html Helpers ile Form Oluşturma
+</h3>
+
+@using (Html.BeginForm())
+{
+    <h4>Kullanıcı Adı</h4>
+    @Html.Editor("txtKullaniciAdi")
+    <h4>Şifre</h4>
+    @Html.Password("txtKullaniciAdi")
+    <br />
+    <input type="submit" value="Giriş" />
+}
+
+<hr />
+
+<h3>
+    Html Helpers ile Listbox Oluşturma
+</h3>
+
+@{
+    SelectListItem[] liste = new SelectListItem[]
+            {
+                new SelectListItem() { Text = "Bilgisayar" },
+                new SelectListItem() { Text = "Elektronik" },
+                new SelectListItem() { Text = "Telefon" }
+            };
+    string mesaj = "<div class='alert alert-success'>Mesajınız İletildi..</div>";
+}
+
+@Html.ListBox("lbListe", liste)
+
+@Html.DropDownList("ddlListe", liste)
+
+<hr />
+
+<h3>
+    Html Helpers ile RadioButton Oluşturma
+</h3>
+
+@Html.RadioButton("rbOnay", "Onaylıyorum") Sözleşmeyi Onaylıyorum
+
+<hr />
+
+<h3>
+    Html Helpers Raw Metodu ile Ekrana Html İçerik Yazdırma
+</h3>
+
+<div class='alert alert-success'>Mesajınız İletildi..</div>
+
+@mesaj
+
+<hr />
+
+@Html.Raw(mesaj)
+
+@Html.Raw("<b>Html.Raw metoduyla</b> ekrana html içeriklerini html olarak yazdırırız. Raw metodu kullanmadan yazarsak ekranda elemetler düz yazı gibi yazdırılır.")
+
+<hr />
+
+<h2>İletişim Formu</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="container" id="iletisimFormu">
+        <div class="row">
+            <div class="col">Adınız</div>
+            <div class="col">
+                @Html.TextBox("txtAd", null, null, new {@class="form-control"})
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col">Soyadınız</div>
+            <div class="col">@Html.TextBox("txtSoyad", null, null, new {@class="form-control"})</div>
+        </div>
+
+        <div class="row mt-3 mb-3">
+            <div class="col">Email</div>
+            <div class="col">@Html.TextBox("txtEmail", null, null, new {@class="form-control"})</div>
+        </div>
+
+        <div class="row">
+            <div class="col">Telefon</div>
+            <div class="col">@Html.TextBox("txtTelefon", null, null, new {@class="form-control"})</div>
+        </div>
+
+        <div class="row my-3">
+            <div class="col">Mesajınız</div>
+            <div class="col">@Html.TextArea("txtMesaj", "text area", 8, 5, new {@class="form-control"})</div>
+        </div>
+        
+        <div class="row my-3">
+            <div class="col">TC Kimlik No</div>
+            <div class="col">
+                <input type="text" maxlength="11" minlength="11" required />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col text-center">
+                <input type="submit" value="Gönder" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+
+}

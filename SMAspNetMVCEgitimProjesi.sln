@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetFrameworkMVCProjesi", "AspNetFrameworkMVCProjesi\AspNetFrameworkMVCProjesi.csproj", "{4896F1B9-53E8-451E-A50E-3D45B81814EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreMVCProjesi", "AspNetCoreMVCProjesi\AspNetCoreMVCProjesi.csproj", "{D954DB54-0210-45DC-91B4-B42DFA92B50D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4896F1B9-53E8-451E-A50E-3D45B81814EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4896F1B9-53E8-451E-A50E-3D45B81814EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4896F1B9-53E8-451E-A50E-3D45B81814EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4896F1B9-53E8-451E-A50E-3D45B81814EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D954DB54-0210-45DC-91B4-B42DFA92B50D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D954DB54-0210-45DC-91B4-B42DFA92B50D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D954DB54-0210-45DC-91B4-B42DFA92B50D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D954DB54-0210-45DC-91B4-B42DFA92B50D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {593DAE88-7EA5-4974-9F64-350FA8C07815}
+	EndGlobalSection
+EndGlobal
