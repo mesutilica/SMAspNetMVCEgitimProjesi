@@ -1,0 +1,28 @@
+﻿
+@{
+}
+
+<h1>
+    Controller'dan View a Veri Gönderme
+</h1>
+
+<h3>Ürün Bilgileri</h3>
+
+<table class="table">
+    <tr>
+        <td>Ürün Kategorisi</td>
+        <td>@ViewBag.UrunKategorisi</td>
+    </tr>
+    <tr>
+        <td>Ürün Adı</td>
+        <td>@ViewData["UrunAdi"]</td>
+    </tr>
+    <tr>
+        <td>Ürün Fiyatı</td>
+        <td>@TempData["UrunFiyati"] ₺</td>
+    </tr>
+    <tr>
+        <td>Ürün Fiyatı Formatlı</td>
+        <td>@String.Format("{0:C}", TempData["UrunFiyati"])</td>
+    </tr>
+</table>

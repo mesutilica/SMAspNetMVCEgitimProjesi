@@ -10,65 +10,8 @@
     @await RenderSectionAsync("OzelCss", required: false)
 </head>
 <body>
-    <partial name="_PartialM" />
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AspNetCoreMVCProjesi</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Anasayfa</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Home" asp-action="About">Hakkımızda</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Privacy">Gizlik</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="MVC01RazorSyntax" asp-action="Index">Razor Syntax</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="MVC02HtmlHelpers" asp-action="Index">HtmlHelpers</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="MVC03PostBack" asp-action="Index">PostBack</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="MVC04HttpUtility" asp-action="Index">HttpUtility</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="MVC05StringFormat" asp-action="Index">StringFormat</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="MVC06Section" asp-action="Index">Section</a>
-                        </li>
-                        
-                        <partial name="_PartialMenu" />
-
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="ContactUs">İletişim</a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <partial name="_PartialHeader" />
+    
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
