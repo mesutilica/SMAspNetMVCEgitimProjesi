@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AspNetCoreMVCProjesi.styles.css" asp-append-version="true" />
+    @await RenderSectionAsync("OzelCss", required: false)
 </head>
 <body>
+    <partial name="_PartialM" />
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
@@ -56,6 +58,8 @@
                             <a class="nav-link" asp-controller="MVC06Section" asp-action="Index">Section</a>
                         </li>
                         
+                        <partial name="_PartialMenu" />
+
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Home" asp-action="ContactUs">İletişim</a>
                         </li>
@@ -70,6 +74,8 @@
             @RenderBody()
         </main>
     </div>
+
+    @await RenderSectionAsync("Ozelicerik", required: false)
 
     <footer class="border-top footer text-muted">
         <div class="container">

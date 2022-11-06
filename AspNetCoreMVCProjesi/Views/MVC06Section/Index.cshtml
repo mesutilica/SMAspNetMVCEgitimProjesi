@@ -1,10 +1,9 @@
-﻿
-@{
+﻿@{
 }
 
-<script>
+@*<script>
     alert("Scripts isimli section çalıştı")
-</script>
+</script>*@
 
 <h1>
     MVC Section Kullanımı
@@ -27,6 +26,19 @@
 @section Scripts{
     <script>
         //alert("Scripts isimli section çalıştı")
-
+        console.log("Scripts isimli section çalıştı");
     </script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+}
+
+    @section Ozelicerik{
+    <section class="alert alert-success">
+        Sayfada html section elementi il bir bölüm
+    </section>
+}
+
+    @section OzelCss{
+    <style>
+        body { background-color: red; color: white; }
+    </style>
 }

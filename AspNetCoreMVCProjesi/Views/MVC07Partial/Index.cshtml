@@ -1,0 +1,25 @@
+﻿
+@{
+}
+
+<h1>MVC Partial Kullanımı</h1>
+
+<p>
+    Partial parça anlamına gelmektedir ve sayfadaki kodları farklı dosyalarda parçalara ayırarak daha kullanışlı kod yönetimi sağlar.
+</p>
+
+<ul class="navbar-nav flex-grow-1">
+    <partial name="_PartialMenu" />
+    <li class="nav-item">
+        <a href="">Şifre Yenileme</a>
+    </li>
+    @Html.Partial("_PartialMenu")
+    <li class="nav-item">
+        <a href="">Şifremi Unuttum</a>
+    </li>
+    @await Html.PartialAsync("_PartialMenu")
+</ul>
+
+<p>
+    Eğer sayfada sabit partial çağıracaksak partial name="_PartialMenu" yapısını, dinamik içerik alan partial kullanacaksak await Html.PartialAsync("_PartialMenu") yöntemini kullanmalıyız.
+</p>
