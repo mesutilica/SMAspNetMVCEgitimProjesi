@@ -1,0 +1,93 @@
+﻿
+@{
+}
+
+<h1>
+    Mvc View'dan Controller'a Veri Gönderme'
+</h1>
+
+<h2>
+    1-Get Metoduyla Veri Gönderme
+</h2>
+
+<form asp-action="Index" method="get" style="border : 1px solid; padding: 1rem">
+    <input type="text" name="txtara" id="deneme" />
+    <button type="submit">Ara</button>
+</form>
+
+@ViewBag.ArananKelime
+
+<div class="alert alert-danger">
+    @ViewBag.ArananKelime
+</div>
+
+<hr />
+
+<h2>
+    2-Post Metoduyla Veri Gönderme
+</h2>
+
+@{
+    SelectListItem[] liste = {
+        new SelectListItem() { Text = "Bilgisayar" },
+        new SelectListItem() { Text = "Monitör" },
+        new SelectListItem() { Text = "Klavye" },
+        new SelectListItem() { Text = "Mikrofon" },
+        new SelectListItem() { Text = "Tablet" }
+    };
+}
+
+@foreach (var item in liste)
+{
+    @item.Value
+}
+
+<form asp-action="Index" style="border : 1px solid; padding: 1rem">
+    @Html.TextBox("text1")
+    <hr />
+    @Html.DropDownList("ddlliste", liste)
+    <hr />
+    @Html.CheckBox("cbOnay") <label>Onaylıyorum</label>
+    <hr />
+    <input type="submit" value="Gönder" />
+</form>
+
+<h3>1. Yöntem parametrelerden gelen veriler</h3>
+
+@ViewBag.Mesaj
+
+<hr />
+
+@ViewBag.Text
+
+<hr />
+
+@ViewBag.cbOnay
+
+<hr />
+
+<h3>2. Yöntem Request.Form ile gelen veriler</h3>
+
+@ViewBag.Mesaj2
+
+<hr />
+
+@ViewBag.Text2
+
+<hr />
+
+@ViewBag.cbOnay2
+
+<hr />
+
+<h3>3. Yöntem IFormCollection ile gelen veriler</h3>
+
+@ViewBag.Mesaj3
+
+<hr />
+
+@ViewBag.Text3
+
+<hr />
+
+@ViewBag.cbOnay3
