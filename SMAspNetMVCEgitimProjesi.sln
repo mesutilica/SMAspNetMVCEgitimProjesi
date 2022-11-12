@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetFrameworkMVCProjesi", "AspNetFrameworkMVCProjesi\AspNetFrameworkMVCProjesi.csproj", "{4896F1B9-53E8-451E-A50E-3D45B81814EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreMVCProjesi", "AspNetCoreMVCProjesi\AspNetCoreMVCProjesi.csproj", "{D954DB54-0210-45DC-91B4-B42DFA92B50D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreMVCProjesi", "AspNetCoreMVCProjesi\AspNetCoreMVCProjesi.csproj", "{D954DB54-0210-45DC-91B4-B42DFA92B50D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreMvcProjeUygulamasi", "NetCoreMvcProjeUygulamasi\NetCoreMvcProjeUygulamasi.csproj", "{99E225F5-6BE2-4715-B12E-E86F9665703C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D954DB54-0210-45DC-91B4-B42DFA92B50D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D954DB54-0210-45DC-91B4-B42DFA92B50D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D954DB54-0210-45DC-91B4-B42DFA92B50D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99E225F5-6BE2-4715-B12E-E86F9665703C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99E225F5-6BE2-4715-B12E-E86F9665703C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99E225F5-6BE2-4715-B12E-E86F9665703C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99E225F5-6BE2-4715-B12E-E86F9665703C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
