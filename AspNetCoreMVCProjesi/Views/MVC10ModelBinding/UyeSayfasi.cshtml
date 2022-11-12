@@ -1,0 +1,55 @@
+﻿@model UyeSayfasiModelView
+
+@{
+    ViewData["Title"] = "Üye Sayfası";
+}
+
+<h1>Üye Sayfası</h1>
+
+<h3>Kullanıcı Bilgileri</h3>
+
+<table class="table table-striped table-hover">
+    <tr>
+        <td>Ad</td>
+        <td>@Model.KullaniciBilgisi.Ad</td>
+    </tr>
+    <tr>
+        <td>Soyad</td>
+        <td>@Model.KullaniciBilgisi.Soyad</td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td>@Model.KullaniciBilgisi.Email</td>
+    </tr>
+    <tr>
+        <td>Kullanıcı Adı</td>
+        <td>@Model.KullaniciBilgisi.KullaniciAdi</td>
+    </tr>
+    <tr>
+        <td>Şifre</td>
+        <td>@Model.KullaniciBilgisi.Sifre</td>
+    </tr>
+</table>
+
+<h3>Adres Bilgisi</h3>
+
+<table class="table">
+    <tr>
+        <td>Şehir</td>
+        <td>
+            @Model.AdresBilgisi.Sehir
+        </td>
+    </tr>
+    <tr>
+        <td>İlçe</td>
+        <td>
+            @Model.AdresBilgisi.Ilce
+        </td>
+    </tr>
+    <tr>
+        <td>Açık Adres</td>
+        <td>
+            @Model.AdresBilgisi.AcikAdres
+        </td>
+    </tr>
+</table>

@@ -29,3 +29,36 @@
     </tr>
 </table>
 
+<h3>Model kullanarak Controller a Veri Gönderme</h3>
+
+<form asp-action="KullaniciSayfasi">
+    <table class="table table-striped table-hover">
+        <tr>
+            <td>Ad</td>
+            <td>@Html.TextBoxFor(model=>model.Ad)</td>
+        </tr>
+        <tr>
+            <td>Soyad</td>
+            <td>@Html.TextBoxFor(model=>model.Soyad)</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>@Html.TextBoxFor(model=>model.Email)</td>
+        </tr>
+        <tr>
+            <td>Kullanıcı Adı</td>
+            <td>
+                <input asp-for="KullaniciAdi" />
+            </td>
+        </tr>
+        <tr>
+            <td>Şifre</td>
+            <td><input asp-for="Sifre" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+            </td>
+        </tr>
+    </table>
+</form>

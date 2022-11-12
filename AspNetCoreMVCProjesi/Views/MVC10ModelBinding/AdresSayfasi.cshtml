@@ -1,0 +1,62 @@
+﻿@model Adres
+
+@{
+    ViewData["Title"] = "Adres Sayfası";
+}
+
+<h1>Adres Sayfası</h1>
+
+@if (Model is not null) // Eğer model nesnemiz null değilse içindeki verileri aşağıda göster
+{
+    <table class="table">
+        <tr>
+            <td>Şehir</td>
+            <td>
+                @Model.Sehir
+            </td>
+        </tr>
+        <tr>
+            <td>İlçe</td>
+            <td>
+                @Model.Ilce
+            </td>
+        </tr>
+        <tr>
+            <td>Açık Adres</td>
+            <td>
+                @Model.AcikAdres
+            </td>
+        </tr>
+    </table>
+}
+else{
+    <div>Veri Yok!</div>
+}
+
+<form asp-action="AdresSayfasi" method="post">
+    <table class="table">
+        <tr>
+            <td>Şehir</td>
+            <td>
+                <input asp-for="Sehir" />
+            </td>
+        </tr>
+        <tr>
+            <td>İlçe</td>
+            <td>
+                <input asp-for="Ilce" />
+            </td>
+        </tr>
+        <tr>
+            <td>Açık Adres</td>
+            <td>
+                <input asp-for="AcikAdres" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Kaydet" />
+            </td>
+        </tr>
+    </table>
+</form>
