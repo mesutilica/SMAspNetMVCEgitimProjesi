@@ -80,9 +80,9 @@
                     @Html.DisplayFor(modelItem => item.SifreTekrar)
                 </td>
                 <td>
-                    @Html.ActionLink("Düzenle", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Detay", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Sil", "Delete", new { /* id=item.PrimaryKey */ })
+                    @Html.ActionLink("Düzenle", "Edit", new {  id=item.Id  }) |
+                    @Html.ActionLink("Detay", "Details", new { id=item.Id }) |
+                    @Html.ActionLink("Sil", "Delete", new { id=item.Id })
                 </td>
             </tr>
         }

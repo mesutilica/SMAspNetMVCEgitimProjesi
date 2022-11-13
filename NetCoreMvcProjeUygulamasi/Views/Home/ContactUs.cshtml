@@ -10,29 +10,35 @@
     <div class="col">
         <h3>İletişim Formu</h3>
         <form asp-action="ContactUs">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="row mb-3">
                 <div class="col">
                     <input asp-for="Name" class="form-control" placeholder="Adınız" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <input asp-for="Surname" class="form-control" placeholder="Soyadınız" />
+                    <span asp-validation-for="Surname" class="text-danger"></span>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col">
                     <input asp-for="Email" class="form-control" placeholder="Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
             </div>
             <div class="row my-3">
                 <div class="col">
                     <input asp-for="Phone" class="form-control" placeholder="Telefon" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <textarea asp-for="Message" class="form-control" placeholder="Mesajınız" maxlength="500"></textarea>
+                    <span asp-validation-for="Message" class="text-danger"></span>
                 </div>
             </div>
             <div class="row mt-3" id="gonder">
@@ -45,9 +51,15 @@
     <div class="col">
         <h3>Harita</h3>
 
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12040.000958790155!2d28.9789395!3d41.0252507!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x44089783d1089f31!2sSiliconmade%20Academy!5e0!3m2!1str!2str!4v1668332754359!5m2!1str!2str" width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
     </div>
     <div class="col">
         <h3>Adres Bilgileri</h3>
-
+        <address>
+            Siliconmade Academy
+            <hr />
+            Kemankeş Karamustafa Paşa, Ali Paşa Değirmeni Sk. No:3, 34560 Beyoğlu/İstanbul
+        </address>
     </div>
 </div>

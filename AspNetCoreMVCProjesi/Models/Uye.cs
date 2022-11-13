@@ -22,10 +22,14 @@ namespace AspNetCoreMVCProjesi.Models
         [Display(Name = "Doğum Tarihi")]
         public DateTime DogumTarihi { get; set; }
         [Display(Name = "Kullanıcı Adı")]
+        [Required(ErrorMessage = "{0} alanı boş geçilemez!"), StringLength(50)]
         public string KullaniciAdi { get; set; }
-        [Display(Name = "Şifre")]
+        [Display(Name = "Şifre"), DataType(DataType.Password)] // Şifre inputunun türü password olsun
+        [Required(ErrorMessage = "{0} alanı boş geçilemez!"), StringLength(50)]
         public string Sifre { get; set; }
-        [Display(Name = "Şifrenizi Tekrar Giriniz")]
+        [Display(Name = "Şifrenizi Tekrar Giriniz"), DataType(DataType.Password)]
+        [Required(ErrorMessage = "{0} alanı boş geçilemez!"), StringLength(50)]
+        [Compare("Sifre")] // SifreTekrar alanını Sifre alanıyla karşılaştır
         public string SifreTekrar { get; set; }
     }
 }
