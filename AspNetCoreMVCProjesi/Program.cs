@@ -1,7 +1,12 @@
+using AspNetCoreMVCProjesi.Models;
+using FluentValidation;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IValidator<Kullanici>, KullaniciValidator>(); // FluentValidation kullanarak validasyon yapacaðýmýzý uygulamaya bildiriyoruz
 
 var app = builder.Build();
 
