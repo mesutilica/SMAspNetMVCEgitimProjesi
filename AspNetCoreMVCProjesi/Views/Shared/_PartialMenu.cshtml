@@ -13,12 +13,27 @@
 
 <div class="dropdown">
     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Model Kullanımı
+        Model
     </a>
 
     <ul class="dropdown-menu">
         <li><a class="dropdown-item" asp-controller="MVC10ModelBinding" asp-action="Index">ModelBinding</a></li>
         <li><a class="dropdown-item" asp-controller="MVC11ModelValidation" asp-action="Index">ModelValidation</a></li>
         <li><a class="dropdown-item" asp-controller="MVC12FluentValidation" asp-action="Index">FluentValidation</a></li>
+    </ul>
+</div>
+
+<div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Cookie Session
+    </a>
+
+    <ul class="dropdown-menu">
+        <li>
+            <a class="dropdown-item" asp-controller="MVC13Cookie" asp-action="Index">MVC13Cookie</a>
+        </li>
+        <li>
+            <a class="dropdown-item" asp-controller="MVC13Cookie" asp-action="CookieOku">CookieOku</a>
+        </li>
     </ul>
 </div>

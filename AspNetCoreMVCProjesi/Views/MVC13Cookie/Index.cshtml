@@ -1,0 +1,25 @@
+﻿
+@{
+}
+
+<h1>Mvc de Çerez(Cookie) Kullanımı</h1>
+
+<p>
+    Çerezler kullanıcının cihazında saklanan küçük verilerdir.
+</p>
+
+<p>
+    Tarayıcıyı kapatsak da çerezler oluşturan uygulamanın belirlediği süre boyunca cihazımızda saklanır.
+</p>
+
+<p>
+    Cihazdaki çerezleri temizlemek için ccleaner vb programlar kullanılabilir veya her tarayıcıda çerezleri yönetme ve kaldırma ekranı bulunur.
+</p>
+
+<form asp-action="CookieOlustur">
+    <input type="text" name="kullaniciAdi" placeholder="Kullanıcı Adı" value="admin" />
+    <input type="password" name="sifre" placeholder="Şifre" />
+    <input type="submit" value="Giriş" />
+</form>
+
+@TempData["mesaj"]
