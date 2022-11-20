@@ -1,15 +1,22 @@
-﻿
-<li class="nav-item">
-    <a class="nav-link" asp-controller="MVC07Partial" asp-action="Index">Partial</a>
-</li>
+﻿<div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Partial-Veri Taşıma
+    </a>
 
-<li class="nav-item">
-    <a class="nav-link" asp-controller="MVC08ControllerToView" asp-action="Index">ControllerToView</a>
-</li>
+    <ul class="dropdown-menu">
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="MVC07Partial" asp-action="Index">Partial</a>
+        </li>
 
-<li class="nav-item">
-    <a class="nav-link" asp-controller="MVC09ViewToControllerData" asp-action="Index">ViewToController</a>
-</li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="MVC08ControllerToView" asp-action="Index">ControllerToView</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="MVC09ViewToControllerData" asp-action="Index">ViewToController</a>
+        </li>
+    </ul>
+</div>
 
 <div class="dropdown">
     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -38,5 +45,25 @@
         <li>
             <a class="dropdown-item" asp-controller="MVC14Session" asp-action="Index">MVC14Session</a>
         </li>
+        <li>
+            <a class="dropdown-item" asp-controller="MVC14Session" asp-action="SessionOku">SessionOku</a>
+        </li>
+    </ul>
+</div>
+
+
+<div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Diğer
+    </a>
+
+    <ul class="dropdown-menu">
+        <li>
+            <a class="dropdown-item" asp-controller="MVC15ViewResults" asp-action="Index">MVC15ViewResults</a>
+        </li>
+        <li>
+            <a class="dropdown-item" asp-controller="MVC16FileUpload" asp-action="Index">MVC16FileUpload</a>
+        </li>
+        
     </ul>
 </div>

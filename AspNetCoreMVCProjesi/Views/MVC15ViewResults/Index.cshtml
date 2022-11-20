@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewData["Title"] = "Mvc View Result Çeşitleri";
+}
+
+<h1>Mvc View Result Çeşitleri</h1>
+
+<h3>
+    Redirect Result : Sayfayı bir url adresine yönlendirme için kullanılır
+</h3>
+
+@Html.ActionLink("Redirect Result", "Yonlendir")
+
+<br />
+
+<a asp-action="Yonlendir">Redirect Result</a>
+
+<hr />
+<h3>
+    RedirectToAction Result :action çalıştığında uygulamayı başka bir action a yönlendirmemizi sağlar
+</h3>
+<a asp-action="ActionaYonlendir">RedirectToAction Result</a>
+
+<h3>
+    RedirectToRoute Result :action çalıştığında uygulamayı başka bir route a yönlendirmemizi sağlar
+</h3>
+
+<a asp-action="RouteYonlendir">RouteYonlendir</a>
+
+<h3>
+    PartialViewResult :action çalıştığında ekrana bir partial view göstermemizi sağlar
+</h3>
+
+<a asp-action="KategorileriGetirPartial">KategorileriGetirPartial</a>
+
+<h3>
+    Kategorileri Action ile Getir
+</h3>
+
+@Html.Partial("_KategorilerPartial")
+
+<h3>
+    FileStreamResult ile dosya indirme işlemi yapılabilir
+</h3>
+
+<a asp-action="MetinDosyasiindir">File Stream Result</a>
+
+<h3>
+    JsonResult : Json veri türünde veri döndürmek için kullanılır
+</h3>
+
+<a asp-action="JsonDondur">JsonResult</a>
+
+<h3>
+    XmlContentResult : action a yapılan istek sonucunda xml veri tipinde data döndürmemizi sağlar.
+</h3>
+
+<a asp-action="XmlContentResult">XmlContentResult</a>

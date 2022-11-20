@@ -8,6 +8,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IValidator<Kullanici>, KullaniciValidator>(); // FluentValidation kullanarak validasyon yapacaðýmýzý uygulamaya bildiriyoruz
 
+builder.Services.AddSession(option => option.IdleTimeout = TimeSpan.FromMinutes(3)); // servis olarak session ý ekledik
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -20,6 +22,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection(); // Uygulamada https güvenli baðlantý yönlendirmesi kullan
 app.UseStaticFiles(); // Uygulamada Statik dosyalar (css, js kütüphaneleri ve resim dosyalarý) kullanýlsýn
+
+app.UseSession(); // uygulamada session kullanmak istediðimizi belirttik
 
 app.UseRouting(); // Uygulamada routing kullanýlsýn (/Home/Index)
 

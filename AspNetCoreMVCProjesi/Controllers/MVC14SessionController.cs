@@ -19,13 +19,19 @@ namespace AspNetCoreMVCProjesi.Controllers
                 HttpContext.Session.SetString("userGuid", Guid.NewGuid().ToString());
                 return RedirectToAction("SessionOku");
             }
-            return View();
+            return RedirectToAction("Index");
         }
         public IActionResult SessionOku()
         {
             TempData["SessionBilgi"] = HttpContext.Session.GetString("kulAdi");
             TempData["userGuid"] = HttpContext.Session.GetString("userGuid");
             return View();
+        }
+        public IActionResult SessionSil()
+        {
+            HttpContext.Session.Remove("kulAdi");
+            HttpContext.Session.Remove("userGuid");
+            return RedirectToAction("Index");
         }
     }
 }
