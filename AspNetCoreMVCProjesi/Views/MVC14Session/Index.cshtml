@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "MVC14 Session Kullanımı";
+}
+
+<h1>MVC14 Session Kullanımı</h1>
+
+<p>
+    Session yapısı sunucu taraflı oturum işlemleri veya sayfalar arası veri taşıma işlemlerinde kullanabileceğimiz güvenli bir yapıdır.
+</p>
+
+<h2>Session Oluştur</h2>
+
+<form asp-action="SessionOlustur">
+    <input type="text" name="kullaniciAdi" placeholder="Kullanıcı Adı" value="admin" />
+    <input type="password" name="sifre" placeholder="Şifre" />
+    <input type="submit" value="Giriş" />
+</form>
+
+@TempData["mesaj"]

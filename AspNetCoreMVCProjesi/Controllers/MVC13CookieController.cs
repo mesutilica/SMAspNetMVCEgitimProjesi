@@ -34,5 +34,12 @@ namespace AspNetCoreMVCProjesi.Controllers
             TempData["kullaniciguid"] = Request.Cookies["userguid"];
             return View();
         }
+        public IActionResult CookieSil()
+        {
+            Response.Cookies.Delete("kulAdi");
+            Response.Cookies.Delete("userguid");
+            Response.Cookies.Delete("sifre");
+            return RedirectToAction("CookieOku");
+        }
     }
 }
