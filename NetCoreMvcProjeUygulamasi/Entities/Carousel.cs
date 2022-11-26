@@ -1,4 +1,4 @@
-﻿namespace NetCoreMvcProjeUygulamasi.Models
+﻿namespace NetCoreMvcProjeUygulamasi.Entities
 {
     public class Carousel
     {

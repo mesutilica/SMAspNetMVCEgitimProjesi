@@ -30,6 +30,11 @@ app.UseRouting(); // Uygulamada routing kullanýlsýn (/Home/Index)
 app.UseAuthorization(); // Uygulamada oturum iþleminden sonra yetkilendirme kullanýlsýn
 
 app.MapControllerRoute(
+            name: "admin",
+            pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+          );
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}"); // Uygulamada kullanýlacak olan routing yapýsý
 

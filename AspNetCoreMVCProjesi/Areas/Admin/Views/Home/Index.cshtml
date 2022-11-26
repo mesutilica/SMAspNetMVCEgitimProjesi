@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<h2>
+    Burası admin anasayfa
+</h2>
+
+<p>
+    Projeye Area eklemek için :
+</p>
+
+<p>
+    Projeye sağ tıklayıp açılan menüden Add > ScaffoldedItem.. yolunu izleyerek açılan pencereden Mvc Area yı seçip Add diyerek gelen 2. pecerede area ismimizi(Admin) yazıp ok butonuna tıklıyoruz.
+</p>
+
+<p>
+    Area oluştuktan sonra bize gösterdiği ScaffoldingReadMe.txt dosyasındaki endpoints.MapControllerRoute.. ile başlayan metodu kopyalayıp Program.cs dosyamızdaki Route metodumuzun üzerine ekledik ve name alanını admin yaptık.
+</p>
+
+<h3>
+    Önemli!
+</h3>
+
+<p>
+    Not : Bu işlemlerden sonra area altına ekleyeceğimiz controller lara [Area("Admin")] şeklinde attribute tanımlaması yapmalıyız! Aksi taktirde Area altındaki sayfalarımız 404 not found hatası verecek ve açılmayacaktır!
+</p>
+
+<p>
+    Area oluşturduktan sonra bu area için layout oluşmaz! Bunu bizim oluşturmamız gerekir. Böylece her area için farklı tasarıma sahip iç uygulamalar geliştirebiliriz.
+</p>
