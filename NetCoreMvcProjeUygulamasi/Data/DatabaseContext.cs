@@ -26,3 +26,7 @@ namespace NetCoreMvcProjeUygulamasi.Data
         }
     }
 }
+
+// Not : Entitilerimizi oluşturduktan sonra Migration oluşturmamız gerekir
+// Migration oluşturmak için : PackageManagerConsole komut ekranını açıyoruz(Eğer bu ekran kapalıysa üst menüden Tools > NugetPackageManager > PackageManagerConsole menüsüne tıklayarak açabiliriz) add-migration EntitilerGuncellendi(EntitilerGuncellendi veya InitialCreate oluşacak Migration ın ismidir, her migration da bir isim vermemiz gerekir)
+// Migration oluştuktan sonra değişiklikleri veritabanına yansıtmak için PMC komut ekranında update-database yazıp enter a basmalıyız
