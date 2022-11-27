@@ -11,6 +11,7 @@ namespace NetCoreMvcProjeUygulamasi.Entities
         public string? Description { get; set; }
         [StringLength(150), Display(Name = "Ürün Resmi")]
         public string? Image { get; set; }
+        [Display(Name = "Eklenme Tarihi")]
         public DateTime? CreateDate { get; set; } = DateTime.Now; // eğer bu alan boş geçilirse eklenme zamanını sistemden otomatik al
         [Display(Name = "Durum")]
         public bool IsActive { get; set; }

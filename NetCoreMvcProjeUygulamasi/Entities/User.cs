@@ -15,7 +15,9 @@ namespace NetCoreMvcProjeUygulamasi.Entities
         public string? Phone { get; set; }
         [Required(ErrorMessage = "{0} alanı boş geçilemez!"), StringLength(50), Display(Name = "Şifre")]
         public string Password { get; set; }
+        [Display(Name = "Durum")]
         public bool IsActive { get; set; }
+        [Display(Name = "Admin")]
         public bool IsAdmin { get; set; }
     }
 }
