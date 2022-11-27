@@ -6,6 +6,9 @@ namespace NetCoreMvcProjeUygulamasi.Data
 {
     public class DatabaseContext : DbContext
     {
+        // Entity framework de CodeFirst tekniğini kullandık, bu teknikde önce projede entity class ları oluşturulur sonra veritabanı ve tabloları oluşturulur
+        // Diğer yöntem ise DatabaseFirst tekniğidir, bu yöntemde ise önce veritabanı ve tablolar sql server da oluşturulur, sonra bu tablolara bakarak class lar yazılır
+        // Her 2 yaklaşımda da hem tabloların hem de class ların yapılarının aynı olması gerekir
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Carousel> Carousels { get; set; }
         public DbSet<Category> Categories { get; set; }
