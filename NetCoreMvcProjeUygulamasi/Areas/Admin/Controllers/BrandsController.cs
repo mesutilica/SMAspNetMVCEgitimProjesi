@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NetCoreMvcProjeUygulamasi.Data;
+using NetCoreMvcProjeUygulamasi.Entities;
 
 namespace NetCoreMvcProjeUygulamasi.Areas.Admin.Controllers
 {
@@ -30,31 +31,42 @@ namespace NetCoreMvcProjeUygulamasi.Areas.Admin.Controllers
         // POST: BrandsController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Brand brand)
         {
-            try
+            if (ModelState.IsValid) // Modelimizdeki validasyon kurallarına uyulmuşsa
             {
-                return RedirectToAction(nameof(Index));
+                try
+                {
+                    context.Brands.Add(brand); // entity frameworkde kayıt ekleme metodu Add dir. Parametre olarak markayı gönderdiğimizde ekleme gerçekleşir.
+                    context.SaveChanges(); // Eklenen kaydı veritabanına işlenmesi için bu kod gerekli
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (Exception hata)
+                {
+                    ModelState.AddModelError("", "Hata Oluştu!"); // Validasyon kontrol 
+                }
             }
-            catch
-            {
-                return View();
-            }
+            
+            return View(brand);
         }
 
         // GET: BrandsController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var marka = context.Brands.Find(id); // Find metodu Ef ün id ye göre veritabanından ilgili kaydı bulup bize getiren metodudur.
+
+            return View(marka);
         }
 
         // POST: BrandsController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Brand brand)
         {
             try
             {
+                context.Brands.Update(brand); // javascript confirm
+                context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -66,16 +78,20 @@ namespace NetCoreMvcProjeUygulamasi.Areas.Admin.Controllers
         // GET: BrandsController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var marka = context.Brands.Find(id);
+
+            return View(marka);
         }
 
         // POST: BrandsController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, Brand brand)
         {
             try
             {
+                context.Brands.Remove(brand); // Entity frameworkde Remove metodu 1 tane kayıt silmek için kullanılır. RemoveRange metodu ise 1 den çok kayıt silmek için kullanılır.
+                context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch

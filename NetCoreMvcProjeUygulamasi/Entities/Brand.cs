@@ -11,9 +11,9 @@ namespace NetCoreMvcProjeUygulamasi.Entities
 
         [Display(Name = "Marka Açıklaması")]
         public string? Description { get; set; }
-
+        
         [StringLength(150)]
-        public string Logo { get; set; }
+        public string? Logo { get; set; } = ""; // property e varsayılan değer atama
 
         [Display(Name = "Durum")]
         public bool IsActive { get; set; }
