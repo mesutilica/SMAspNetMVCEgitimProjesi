@@ -1,11 +1,15 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using NetCoreMvcProjeUygulamasi.Data;
+using NetCoreMvcProjeUygulamasi.Entities;
 
 namespace NetCoreMvcProjeUygulamasi.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CarouselController : Controller
     {
+        // SOLID deki D harfi dependency inversion
         // Dependency Injection işlemi ile context oluşturma
         private readonly DatabaseContext _context; // Burada boş bir DatabaseContext nesnesi oluşturduk
         // _context e sağ klik açılan menüden Quick actions ile başlayan menüye tıkladık
@@ -16,9 +20,10 @@ namespace NetCoreMvcProjeUygulamasi.Areas.Admin.Controllers
         }
 
         // GET: CarouselController
-        public ActionResult Index()
+        public async Task<ActionResult> IndexAsync()
         {
-            return View();
+            var model = await _context.Carousels.ToListAsync();
+            return View(model);
         }
 
         // GET: CarouselController/Details/5
@@ -36,10 +41,19 @@ namespace NetCoreMvcProjeUygulamasi.Areas.Admin.Controllers
         // POST: CarouselController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Carousel carousel, IFormFile? Image)
         {
             try
             {
+                if (Image is not null)
+                {
+                    string klasor = Directory.GetCurrentDirectory() + "/wwwroot/Img/" + Image.FileName; // yükleme yapacağımız klasörü belirttik
+                    using var stream = new FileStream(klasor, FileMode.Create); // yükleme için gerekli veri akışı oluşturduk
+                    Image.CopyTo(stream); // veri akışını kullanarak yükleme yaptık
+                    carousel.Image = Image.FileName;
+                }
+                _context.Carousels.Add(carousel);
+                _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -61,7 +75,7 @@ namespace NetCoreMvcProjeUygulamasi.Areas.Admin.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(IndexAsync));
             }
             catch
             {
@@ -82,7 +96,7 @@ namespace NetCoreMvcProjeUygulamasi.Areas.Admin.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(IndexAsync));
             }
             catch
             {
