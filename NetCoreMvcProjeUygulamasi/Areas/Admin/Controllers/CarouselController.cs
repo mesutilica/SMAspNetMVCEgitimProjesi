@@ -63,19 +63,29 @@ namespace NetCoreMvcProjeUygulamasi.Areas.Admin.Controllers
         }
 
         // GET: CarouselController/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> EditAsync(int id)
         {
-            return View();
+            var model = await _context.Carousels.FindAsync(id);
+            return View(model);
         }
 
         // POST: CarouselController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Carousel carousel, IFormFile? Image)
         {
             try
             {
-                return RedirectToAction(nameof(IndexAsync));
+                if (Image is not null)
+                {
+                    string klasor = Directory.GetCurrentDirectory() + "/wwwroot/Img/" + Image.FileName;
+                    using var stream = new FileStream(klasor, FileMode.Create);
+                    Image.CopyTo(stream);
+                    carousel.Image = Image.FileName;
+                }
+                _context.Carousels.Update(carousel);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
             }
             catch
             {
@@ -84,19 +94,22 @@ namespace NetCoreMvcProjeUygulamasi.Areas.Admin.Controllers
         }
 
         // GET: CarouselController/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> DeleteAsync(int id)
         {
-            return View();
+            var model = await _context.Carousels.FindAsync(id);
+            return View(model);
         }
 
         // POST: CarouselController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, Carousel carousel)
         {
             try
             {
-                return RedirectToAction(nameof(IndexAsync));
+                _context.Carousels.Remove(carousel);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
             }
             catch
             {

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<NetCoreMvcProjeUygulamasi.Entities.Carousel>
+﻿@model IEnumerable<Carousel>
 
 @{
     ViewData["Title"] = "Carousel Yönetimi";
@@ -35,7 +35,7 @@
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Image)
+                    <img src="/Img/@Html.DisplayFor(modelItem => item.Image)" alt="" height="50" />
                 </td>
                 <td>
                     <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Düzenle</a> |

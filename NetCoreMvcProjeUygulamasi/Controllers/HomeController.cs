@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using NetCoreMvcProjeUygulamasi.Data;
 using NetCoreMvcProjeUygulamasi.Models;
 using System.Diagnostics;
 
@@ -6,16 +8,17 @@ namespace NetCoreMvcProjeUygulamasi.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly DatabaseContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(DatabaseContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var model = await _context.Carousels.ToListAsync();
+            return View(model);
         }
 
         public IActionResult Privacy()
