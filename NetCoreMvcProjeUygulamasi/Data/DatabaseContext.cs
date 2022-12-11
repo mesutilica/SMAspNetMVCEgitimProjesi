@@ -25,6 +25,19 @@ namespace NetCoreMvcProjeUygulamasi.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Burası veritabanımız oluştuktan sonra model classları ile ilgili işlemlerin yapılabileceği metot
+            modelBuilder.Entity<User>().HasData(
+                new User
+                {
+                    Id = 1,
+                    Phone = "",
+                    Email = "admin@projeuygulamasi.com",
+                    IsActive = true,
+                    IsAdmin = true,
+                    Name = "admin",
+                    Surname = "admin",
+                    Password = "123"
+                }
+                );
             base.OnModelCreating(modelBuilder);
         }
     }

@@ -62,16 +62,26 @@ namespace NetCoreMvcProjeUygulamasi.Areas.Admin.Controllers
         // GET: CategoriesController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var model = _context.Categories.FirstOrDefault(c => c.Id == id);
+            return View(model);
         }
 
         // POST: CategoriesController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Category category, IFormFile? Image)
         {
             try
             {
+                if (Image is not null)
+                {
+                    string klasor = Directory.GetCurrentDirectory() + "/wwwroot/Img/" + Image.FileName;
+                    using var stream = new FileStream(klasor, FileMode.Create);
+                    Image.CopyTo(stream);
+                    category.Image = Image.FileName;
+                }
+                _context.Categories.Update(category);
+                _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -81,18 +91,21 @@ namespace NetCoreMvcProjeUygulamasi.Areas.Admin.Controllers
         }
 
         // GET: CategoriesController/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> DeleteAsync(int id)
         {
-            return View();
+            var model = await _context.Categories.SingleOrDefaultAsync(c => c.Id == id);
+            return View(model);
         }
 
         // POST: CategoriesController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, Category category)
         {
             try
             {
+                _context.Categories.Remove(category);
+                _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch

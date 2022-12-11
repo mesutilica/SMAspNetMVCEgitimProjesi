@@ -7,11 +7,11 @@ namespace NetCoreMvcProjeUygulamasi.Entities
         public int Id { get; set; }
         [Required(ErrorMessage = "{0} alanı boş geçilemez!"), StringLength(50), Display(Name = "Ürün Adı")]
         public string Name { get; set; }
-        [Display(Name = "Ürün Adı")]
+        [Display(Name = "Ürün Açıklaması")]
         public string? Description { get; set; }
         [StringLength(150), Display(Name = "Ürün Resmi")]
         public string? Image { get; set; }
-        [Display(Name = "Eklenme Tarihi")]
+        [Display(Name = "Eklenme Tarihi"), ScaffoldColumn(false)] // ScaffoldColumn(false) CreateDate property sinin view oluşturulurken ekranda div inin oluşmamasını sağlar
         public DateTime? CreateDate { get; set; } = DateTime.Now; // eğer bu alan boş geçilirse eklenme zamanını sistemden otomatik al
         [Display(Name = "Durum")]
         public bool IsActive { get; set; }
